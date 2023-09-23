@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import User_dashboard from './User_dashboard'
-import Detail_ad from './Detail_ad'
+import User_dashboard from './Components/User_dashboard'
+import Edit_profile from './Components/Edit_profile'
 // import './App.css'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Routes>
   
         <Route path="/" element={<User_dashboard />} />
-        <Route path="/datail" element={<Detail_ad />} />
+        <Route path="/edit" element={<Edit_profile />} />
 
       </Routes>
       

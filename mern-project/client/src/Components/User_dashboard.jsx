@@ -1,5 +1,6 @@
 import React from 'react'
-import { faHome,faBed,faArrowsLeftRightToLine} from "@fortawesome/free-solid-svg-icons";
+import {Link} from 'react-router-dom'
+import { faHome,faBed,faArrowsLeftRightToLine,faTrash,faArrowsRotate,faPen} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Card,
@@ -49,7 +50,7 @@ const User_dashboard = () => {
               </div>
             </div>
 
-            <Button className='ml-20 mt-5 rounded-full text-sm hover:border-primary hover:text-white"' style={{backgroundColor:"#B7D29F"}} onClick={handleShow}>Change Password</Button>
+            <Button className='ml-20 mt-5 rounded-full text-sm hover:border-primary hover:text-white"' style={{backgroundColor:"#B7D29F"}} onClick={handleShow}>Change password</Button>
               <Dialog
                 size="xs"
                 open={show}
@@ -57,8 +58,8 @@ const User_dashboard = () => {
                 className="bg-transparent shadow-none"
               >
                 <Card className="mx-auto w-full max-w-[24rem]">
-                    <Typography className='mt-5 flex justify-center'variant="h5">
-                      Change Password
+                    <Typography className='mt-5 flex justify-center 'style={{color:"#747E38"}} variant="h5">
+                      CHANGE PASSWORD
                     </Typography>
 
                   <CardBody className="flex flex-col gap-4">
@@ -69,7 +70,7 @@ const User_dashboard = () => {
                   </CardBody>
 
                   <CardFooter className="pt-0">
-                    <Button variant="gradient" style={{backgroundColor:"#AFBAA3"}} onClick={handleShow} fullWidth>
+                    <Button style={{backgroundColor:"#81B95F"}} onClick={handleShow} fullWidth>
                       Confirm
                     </Button>                  
                   </CardFooter>
@@ -295,10 +296,10 @@ const User_dashboard = () => {
         </div>
                 
         <div className="flex justify-center mt-20 gap-5">
-          <Button className='ml-20 mb-5 rounded-full h-10 text-sm' style={{backgroundColor:"#B7D29F"}}>Edit My Profile</Button>
-          <Button className='ml-20 mb-5 rounded-full h-10 text-sm' style={{backgroundColor:"#B7D29F"}}>Delete My Account</Button>
-          <Button className='ml-20 mb-5 rounded-full h-10 text-sm' style={{backgroundColor:"#B7D29F"}}>Convert to propose Accomodation</Button>
-        
+          <Link className='ml-20 mb-5 rounded-full w-52 h-9 pt-2 pb-1 text-center text-white' style={{backgroundColor:"#89E488"}} to={`/edit`}>edit my profile <FontAwesomeIcon icon={faPen} />
+          </Link>
+          <Button className='ml-20 mb-5 rounded-full pb-7 h-8 text-sm font-normal lowercase' style={{backgroundColor:"#89E488"}}>Delete My Account <FontAwesomeIcon icon={faTrash} /></Button>
+          <Button className='ml-20 mb-5 rounded-full pb-7 h-8 text-sm font-normal lowercase' style={{backgroundColor:"#89E488"}}>convert to propose accomodation <FontAwesomeIcon icon={faArrowsRotate} /></Button>        
         </div>
 
       </div>
